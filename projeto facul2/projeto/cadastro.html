@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro 9Tech</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Righteous&display=swap');
+        
+       body{
+           background-color: lightgray;
+       } 
+        
+        main{
+            background-color: white;
+            height: 500px;
+            width: 1200px;
+            margin: auto;
+            margin-top: 140px;
+            padding: 10px;
+            border: 4px;
+            border-style: solid;
+            border-color: black;
+        }
+
+        .inputs{
+            display: block;
+            margin-top: 30px;
+            margin-left: 100px;
+            width: 400px;
+            height: 25px;
+            font-weight: bolder;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 2px;
+            border-style: solid;
+            border-color: orange;
+            
+        
+        }
+
+        #bloco2{
+            background-color: orange;
+            height: 150px;
+            width: 300px;
+            padding: 10px;
+            position: absolute;
+            margin-left: 750px;
+            margin-top: 80px;
+            border: 2px;
+            border-style: solid;
+            border-color: black;
+            
+        }
+
+        #cabecalho{
+            background-color: orange;
+            width: 1210px;
+            padding: 5px;
+            margin-top: -10px;
+            margin-left: -10px;
+            border-left: 0px;
+            border-top: 0px;
+            border-right: 0px;
+            border-bottom: 3px;
+            border-style: solid;
+            border-color: black;
+        }
+
+        #texto{
+            text-align: center;
+            font-family: 'Oswald';
+        }
+
+        .cpfop{
+            display: block;
+            border: 2px;
+            border-style: solid;
+            border-color: black;
+        }
+
+        #form{
+            margin-top: 30px;
+            position: absolute;
+        }
+
+
+        .inputs::placeholder{
+            color: black;
+        }
+
+       #select{
+           position: absolute;
+           margin-top: -15px;
+           width: 80px;
+           
+       }
+
+       #cpf{
+           width: 200px;
+           margin-top: 10px;
+       }
+
+       h3{
+           margin-top: 10px;
+           font-family: Arial, Helvetica, sans-serif;
+       }
+
+
+       a{
+           text-decoration: none;
+           color: black;
+           
+       }
+
+       #tech{
+        font-family: 'Oswald';
+        font-size: 50px;
+        margin-top: -10px;
+       }
+
+       #cpf::placeholder{
+           color: black;
+           font-weight: bolder;
+       }
+
+       #submit{
+           position: absolute;
+           margin-left: 980px;
+           
+       }
+
+       #botao{
+           height: 30px;
+           width: 100px;
+           background-color: orange;
+           color: black;
+           border: none;
+           font-weight: bolder;
+           cursor: pointer;
+       }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><h1 id="tech">9Tech</h1></a>
+    </header>
+    <main>
+        <div id="cabecalho">
+            <h1 id="texto">Cadastro 9Tech</h1>
+        </div>
+        <div id="principal">
+            <div id="form">
+                <form action="">
+                    <input type="text" placeholder="Nome completo" class="inputs" id="name" required>
+                    <input type="email" placeholder="E-mail" class="inputs" id="mail" required>
+                    <input type="email" placeholder="Confirme o email" class="inputs" id="confirmmail" required>
+                    <input type="password" placeholder="Crie uma senha" class="inputs" id="senha" required>
+                    <input type="password" placeholder="Confirme a senha" class="inputs" id="confirmsenha" required>
+                    <div id="submit">
+                        <input type="submit" value="Cadastrar" id="botao" onclick="cadastrar()">
+                    </div>
+                </form>
+            </div>
+            <div id="bloco2">
+                <input type="text" placeholder="CPF" id="cpf" class="cpfop">
+                <h3>sexo</h3>
+                <select name="sexo" id="select" class="cpfop">
+                    <option value="masc">masc</option>
+                    <option value="fem">fem</option>
+                    <option value="outro">outro</option>
+                </select>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function cadastrar(){
+            var nome = document.getElementById("name")
+            var mail = document.getElementById("mail")
+            var coonfirmmail = document.getElementById("confirmmail")
+            var senha = document.getElementById("senha")
+            var confirmsenha = document.getElementById("confirmsenha")
+            var cpf = document.getElementById("cpf")
+            var sexo = document.getElementById("select")
+            var informacoes = [nome.value, mail.value, coonfirmmail.value, senha.value, confirmsenha.value, cpf.value, sexo.value]
+
+            if(mail.value != coonfirmmail.value || senha.value != confirmsenha.value){
+                window.alert("confira as informacoes e tente denovo")
+            }else{
+                window.alert(informacoes)
+            }
+        }
+    </script>
+
+</body>
+</html>
